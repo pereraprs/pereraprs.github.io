@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-scroll';
-//import groupImg from '/Group 6.png';
 
 export default function Header() {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -9,19 +8,16 @@ export default function Header() {
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 50);
         };
-
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
     return (
         <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
-            <div className='header-decoration'>
-                <img src="/Group 6.png" alt="decoration" className='header-wave' />
-            </div>
             <div className='container'>
                 <div className='logo'>
                     <span className='logo-text'></span>
+                    <span className='logo-cursor'></span>
                 </div>
                 <nav className='nav'>
                     <Link to='about' smooth={true} duration={500}>About</Link>
